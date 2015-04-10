@@ -8,21 +8,12 @@ object MainForm: TMainForm
   ClientWidth = 320
   OnCreate = FormCreate
   LCLVersion = '1.2.6.0'
-  object Figure: TPanel
-    Left = 8
-    Height = 170
-    Top = 64
-    Width = 305
-    Anchors = [akTop, akLeft, akRight, akBottom]
-    Caption = 'Figure'
-    TabOrder = 0
-  end
   object Vx: TEdit
     Left = 40
     Height = 25
     Top = 0
     Width = 80
-    TabOrder = 1
+    TabOrder = 0
     Text = 'Vx'
   end
   object Label1: TLabel
@@ -40,15 +31,13 @@ object MainForm: TMainForm
     Width = 17
     Caption = 'Vy'
     ParentColor = False
-    OnClick = Label2Click
   end
   object Vy: TEdit
     Left = 144
     Height = 25
     Top = 0
     Width = 80
-    OnChange = VyChange
-    TabOrder = 2
+    TabOrder = 1
     Text = 'Vy'
   end
   object Label3: TLabel
@@ -58,7 +47,6 @@ object MainForm: TMainForm
     Width = 10
     Caption = 'H'
     ParentColor = False
-    OnClick = Label3Click
   end
   object H: TEdit
     Left = 40
@@ -66,7 +54,7 @@ object MainForm: TMainForm
     Top = 32
     Width = 80
     OnChange = HChange
-    TabOrder = 3
+    TabOrder = 2
     Text = 'H'
   end
   object km: TLabel
@@ -84,5 +72,15 @@ object MainForm: TMainForm
     Width = 27
     Caption = 'm_s'
     ParentColor = False
+  end
+  object Figure: TPaintBox
+    Left = 8
+    Height = 172
+    Top = 60
+    Width = 304
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Color = clCream
+    ParentColor = False
+    OnPaint = FigurePaint
   end
 end
