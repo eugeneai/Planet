@@ -20,6 +20,7 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
+    Start: TButton;
     H: TEdit;
     Label3: TLabel;
     km: TLabel;
@@ -29,9 +30,8 @@ type
     Vy: TEdit;
     Label1: TLabel;
     Label2: TLabel;
-    procedure FigureClick(Sender: TObject);
+    procedure StartClick(Sender: TObject);
     procedure FigurePaint(Sender: TObject);
-    procedure HChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     scale:Real;
@@ -74,14 +74,10 @@ begin
   C.Ellipse(Cx-R,Cy-R,Cx+R,Cy+R);
 end;
 
-procedure TMainForm.HChange(Sender: TObject);
+
+procedure TMainForm.StartClick(Sender: TObject);
 begin
-
-end;
-
-procedure TMainForm.FigureClick(Sender: TObject);
-begin
-
+   FigurePaint(Sender);
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
