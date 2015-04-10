@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="planet.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="planet"/>
+        <UsageCount Value="20"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="model.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="model"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="56"/>
+        <CursorPos X="17" Y="67"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="/usr/lib/fpc/src/packages/palmunits/src/control.pp"/>
+        <UnitName Value="control"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="157"/>
+        <CursorPos X="20" Y="186"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="25" HistoryIndex="24">
+      <Position1>
+        <Filename Value="model.pas"/>
+        <Caret Line="12" Column="8" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="model.pas"/>
+        <Caret Line="24" Column="16" TopLine="6"/>
+      </Position2>
+      <Position3>
+        <Filename Value="model.pas"/>
+        <Caret Line="28" Column="16" TopLine="8"/>
+      </Position3>
+      <Position4>
+        <Filename Value="model.pas"/>
+        <Caret Line="30" Column="16" TopLine="10"/>
+      </Position4>
+      <Position5>
+        <Filename Value="model.pas"/>
+        <Caret Line="31" Column="16" TopLine="11"/>
+      </Position5>
+      <Position6>
+        <Filename Value="model.pas"/>
+        <Caret Line="32" Column="16" TopLine="12"/>
+      </Position6>
+      <Position7>
+        <Filename Value="model.pas"/>
+        <Caret Line="34" Column="16" TopLine="14"/>
+      </Position7>
+      <Position8>
+        <Filename Value="model.pas"/>
+        <Caret Line="40" Column="3" TopLine="24"/>
+      </Position8>
+      <Position9>
+        <Filename Value="model.pas"/>
+        <Caret Line="41" Column="10" TopLine="21"/>
+      </Position9>
+      <Position10>
+        <Filename Value="model.pas"/>
+        <Caret Line="8" Column="6" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="model.pas"/>
+        <Caret Line="10" Column="16" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="model.pas"/>
+        <Caret Line="55" Column="37" TopLine="39"/>
+      </Position12>
+      <Position13>
+        <Filename Value="/usr/lib/fpc/src/packages/palmunits/src/control.pp"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position13>
+      <Position14>
+        <Filename Value="model.pas"/>
+        <Caret Line="55" Column="37" TopLine="39"/>
+      </Position14>
+      <Position15>
+        <Filename Value="model.pas"/>
+        <Caret Line="59" Column="1" TopLine="39"/>
+      </Position15>
+      <Position16>
+        <Filename Value="model.pas"/>
+        <Caret Line="56" Column="29" TopLine="39"/>
+      </Position16>
+      <Position17>
+        <Filename Value="model.pas"/>
+        <Caret Line="59" Column="27" TopLine="43"/>
+      </Position17>
+      <Position18>
+        <Filename Value="model.pas"/>
+        <Caret Line="61" Column="27" TopLine="45"/>
+      </Position18>
+      <Position19>
+        <Filename Value="model.pas"/>
+        <Caret Line="66" Column="3" TopLine="50"/>
+      </Position19>
+      <Position20>
+        <Filename Value="model.pas"/>
+        <Caret Line="73" Column="14" TopLine="57"/>
+      </Position20>
+      <Position21>
+        <Filename Value="model.pas"/>
+        <Caret Line="63" Column="4" TopLine="53"/>
+      </Position21>
+      <Position22>
+        <Filename Value="model.pas"/>
+        <Caret Line="64" Column="4" TopLine="54"/>
+      </Position22>
+      <Position23>
+        <Filename Value="model.pas"/>
+        <Caret Line="66" Column="16" TopLine="56"/>
+      </Position23>
+      <Position24>
+        <Filename Value="model.pas"/>
+        <Caret Line="67" Column="11" TopLine="57"/>
+      </Position24>
+      <Position25>
+        <Filename Value="model.pas"/>
+        <Caret Line="81" Column="1" TopLine="61"/>
+      </Position25>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

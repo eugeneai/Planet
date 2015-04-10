@@ -1,0 +1,88 @@
+object MainForm: TMainForm
+  Left = 1364
+  Height = 240
+  Top = 174
+  Width = 320
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object Figure: TPanel
+    Left = 8
+    Height = 170
+    Top = 64
+    Width = 305
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Figure'
+    TabOrder = 0
+  end
+  object Vx: TEdit
+    Left = 40
+    Height = 25
+    Top = 0
+    Width = 80
+    TabOrder = 1
+    Text = 'Vx'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 16
+    Caption = 'Vx'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 120
+    Height = 15
+    Top = 8
+    Width = 17
+    Caption = 'Vy'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Vy: TEdit
+    Left = 144
+    Height = 25
+    Top = 0
+    Width = 80
+    OnChange = VyChange
+    TabOrder = 2
+    Text = 'Vy'
+  end
+  object Label3: TLabel
+    Left = 13
+    Height = 15
+    Top = 36
+    Width = 10
+    Caption = 'H'
+    ParentColor = False
+    OnClick = Label3Click
+  end
+  object H: TEdit
+    Left = 40
+    Height = 25
+    Top = 32
+    Width = 80
+    OnChange = HChange
+    TabOrder = 3
+    Text = 'H'
+  end
+  object km: TLabel
+    Left = 120
+    Height = 15
+    Top = 40
+    Width = 20
+    Caption = 'km'
+    ParentColor = False
+  end
+  object m_s: TLabel
+    Left = 232
+    Height = 15
+    Top = 8
+    Width = 27
+    Caption = 'm_s'
+    ParentColor = False
+  end
+end
