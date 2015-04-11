@@ -42,7 +42,7 @@ type
     Sx,Sy:Integer;
     X,Y:Real;
     Vxs,Vys:Real;
-    Sim:Boolean;
+    ccol:TColor;
     procedure PutPoint(pX,pY:Real; col:TColor);
   public
     { public declarations }
@@ -81,7 +81,7 @@ begin
   C.Ellipse(Cx-R,Cy-R,Cx+R,Cy+R);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
-  Sim:=False;
+  ccol:=clBlack;
 end;
 
 procedure TMainForm.TimerTimer(Sender: TObject);
@@ -90,11 +90,14 @@ var
 begin
   X:=X+Vxs;
   Y:=Y+Vys;
-  PutPoint(X,Y,clBlack);
-  FigurePaint(Sender);
+  PutPoint(X,Y,ccol);
+  Figure.Repaint;
+  //FigurePaint(Sender);
 end;
 
 procedure TMainForm.StartClick(Sender: TObject);
+var
+  sim:Boolean;
 begin
   Timer.Enabled:=not Timer.Enabled;
   Sim:=Timer.Enabled;
@@ -104,12 +107,16 @@ begin
         X:=0.0;
         Vxs:=StrToFloat(Vx.Text);
         Vys:=StrToFloat(Vy.Text);
-        PutPoint(X,Y, clBlue);
-        FigurePaint(Sender);
+        PutPoint(X,Y, ccol);
+        //FigurePaint(Sender);
+        Figure.Repaint;
         Start.Caption:='Stop'
     end
   Else
-    Start.Caption:='Start';
+    begin
+      Start.Caption:='Start';
+      ccol:=RGBToColor(Random(256),Random(128),Random(256));
+    end;
 end;
 
 procedure TMainForm.PutPoint(pX,pY:Real; col:TColor);
@@ -118,8 +125,8 @@ var
 begin
   xi:=round(Sx+pX*scale);      // As the coordinate system is inverted
   yi:=round(Sy-pY*scale);
-  bmp.Canvas.Pixels[xi,yi]:=col;
-  bmp.Canvas.Rectangle(xi-2,yi-2,xi+2,yi+2);
+  bmp.Canvas.Pixels[xi,yi]:=ccol;
+  //bmp.Canvas.Rectangle(xi-2,yi-2,xi+2,yi+2);
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
