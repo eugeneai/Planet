@@ -93,6 +93,7 @@ object MainForm: TMainForm
     TabOrder = 3
   end
   object Timer: TTimer
+    Enabled = False
     OnTimer = TimerTimer
     left = 280
     top = 8

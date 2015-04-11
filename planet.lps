@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="planet.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -11,7 +11,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="30"/>
       </Unit0>
       <Unit1>
         <Filename Value="model.pas"/>
@@ -23,9 +23,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="15"/>
-        <CursorPos X="18" Y="33"/>
-        <UsageCount Value="28"/>
+        <TopLine Value="39"/>
+        <CursorPos X="23" Y="122"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -73,19 +73,103 @@
       <Unit7>
         <Filename Value="/usr/lib/lazarus/lcl/include/control.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3630"/>
-        <CursorPos X="1" Y="3645"/>
-        <UsageCount Value="9"/>
+        <TopLine Value="2709"/>
+        <CursorPos X="1" Y="2722"/>
+        <UsageCount Value="10"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="../../soft/planet/model.pas"/>
+        <UnitName Value="model"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="89"/>
+        <CursorPos X="28" Y="104"/>
+        <UsageCount Value="10"/>
+      </Unit8>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="20" HistoryIndex="19">
       <Position1>
         <Filename Value="model.pas"/>
         <Caret Line="78" Column="31" TopLine="54"/>
       </Position1>
+      <Position2>
+        <Filename Value="model.pas"/>
+        <Caret Line="34" Column="19" TopLine="15"/>
+      </Position2>
+      <Position3>
+        <Filename Value="model.pas"/>
+        <Caret Line="107" Column="1" TopLine="79"/>
+      </Position3>
+      <Position4>
+        <Filename Value="model.pas"/>
+        <Caret Line="93" Column="19" TopLine="74"/>
+      </Position4>
+      <Position5>
+        <Filename Value="model.pas"/>
+        <Caret Line="101" Column="49" TopLine="85"/>
+      </Position5>
+      <Position6>
+        <Filename Value="model.pas"/>
+        <Caret Line="99" Column="18" TopLine="85"/>
+      </Position6>
+      <Position7>
+        <Filename Value="model.pas"/>
+        <Caret Line="103" Column="10" TopLine="85"/>
+      </Position7>
+      <Position8>
+        <Filename Value="model.pas"/>
+        <Caret Line="95" Column="24" TopLine="85"/>
+      </Position8>
+      <Position9>
+        <Filename Value="model.pas"/>
+        <Caret Line="93" Column="12" TopLine="78"/>
+      </Position9>
+      <Position10>
+        <Filename Value="model.pas"/>
+        <Caret Line="40" Column="1" TopLine="26"/>
+      </Position10>
+      <Position11>
+        <Filename Value="model.pas"/>
+        <Caret Line="44" Column="15" TopLine="30"/>
+      </Position11>
+      <Position12>
+        <Filename Value="model.pas"/>
+        <Caret Line="105" Column="18" TopLine="85"/>
+      </Position12>
+      <Position13>
+        <Filename Value="model.pas"/>
+        <Caret Line="104" Column="4" TopLine="92"/>
+      </Position13>
+      <Position14>
+        <Filename Value="model.pas"/>
+        <Caret Line="83" Column="14" TopLine="58"/>
+      </Position14>
+      <Position15>
+        <Filename Value="model.pas"/>
+        <Caret Line="103" Column="13" TopLine="86"/>
+      </Position15>
+      <Position16>
+        <Filename Value="model.pas"/>
+        <Caret Line="103" Column="13" TopLine="86"/>
+      </Position16>
+      <Position17>
+        <Filename Value="model.pas"/>
+        <Caret Line="120" Column="18" TopLine="90"/>
+      </Position17>
+      <Position18>
+        <Filename Value="model.pas"/>
+        <Caret Line="102" Column="1" TopLine="84"/>
+      </Position18>
+      <Position19>
+        <Filename Value="model.pas"/>
+        <Caret Line="12" Column="30" TopLine="1"/>
+      </Position19>
+      <Position20>
+        <Filename Value="model.pas"/>
+        <Caret Line="87" Column="16" TopLine="104"/>
+      </Position20>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
@@ -94,9 +178,9 @@
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
-        <Source Value="model.pas"/>
+        <Source Value="../../soft/planet/model.pas"/>
         <InitialEnabled Value="False"/>
-        <Line Value="95"/>
+        <Line Value="109"/>
       </Item1>
     </BreakPoints>
   </Debugging>
