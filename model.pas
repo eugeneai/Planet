@@ -30,9 +30,11 @@ type
     Vy: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    Timer:TTimer;
     procedure StartClick(Sender: TObject);
     procedure FigurePaint(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure TimerTimer(Sender: TObject);
   private
     scale:Real;
     bmp:TBitmap;
@@ -72,6 +74,11 @@ begin
   Cx:=C.Width >> 1;
   Cy:=C.Height >> 1;
   C.Ellipse(Cx-R,Cy-R,Cx+R,Cy+R);
+end;
+
+procedure TMainForm.TimerTimer(Sender: TObject);
+begin
+
 end;
 
 
