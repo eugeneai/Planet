@@ -12,8 +12,10 @@ const
      defVx=8e3; // 8*10^3 m/s
      defVy=0.0;
      defH =400.0; // In km
-     RE=6371000;
+     RE=6371000.0;
      SS=20;
+     GM=4e14;
+     iters=1000;
 
 type
 
@@ -39,11 +41,11 @@ type
     { private declarations }
     scale:Real;
     bmp:TBitmap;
-    Sx,Sy:Integer;
+    Sx,Sy,Sye:Integer;
     X,Y:Real;
     Vxs,Vys:Real;
     ccol:TColor;
-    procedure PutPoint(pX,pY:Real; col:TColor);
+    function PutPoint(pX,pY:Real; col:TColor):Boolean;
   public
     { public declarations }
   end;
@@ -62,7 +64,6 @@ var
   C:TCanvas;
   R, Cx,Cy:Integer;
 begin
-     //Vx.SetTextBuf(FloatToStr(defVx));
   Vx.Text:=FloatToStr(defVx);
   Vy.Text:=FloatToStr(defVy);
   H.Text:=FloatToStr(defH);
@@ -72,27 +73,43 @@ begin
   bmp:=TBitmap.Create;
   bmp.SetSize(Screen.Width, Screen.Height);
   C:=bmp.Canvas;
-  //C.Brush.Color:=clWhite;
   C.FillRect(0,0,Screen.Width,Screen.Height);
-  C.Pen.Color:=clRed;
+  C.Pen.Color:=RGBToColor(100,190,255);
+  C.Brush.Color:=RGBToColor(100,150,255);
   R:=trunc(RE * scale);
-  Cx:=C.Width >> 1;
-  Cy:=C.Height >> 1;
-  C.Ellipse(Cx-R,Cy-R,Cx+R,Cy+R);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
+  Sye:=Sy >> 1;
+  C.Ellipse(Sx-R,Sye-R,Sx+R,Sye+R);
   ccol:=clBlack;
 end;
 
 procedure TMainForm.TimerTimer(Sender: TObject);
 var
   C:TCanvas;
+  ax,ay,r,r3,dt:Real;
+  i:integer;
 begin
-  X:=X+Vxs;
-  Y:=Y+Vys;
-  PutPoint(X,Y,ccol);
+  dt:=1.0;
+  for i:=1 to iters do
+  begin
+    r:=sqrt(sqr(X)+sqr(Y));
+    r3:=r*r*r;
+    ax:=-GM*X/r3;
+    ay:=-GM*Y/r3;
+    Vxs:=Vxs+dt*ax;
+    Vys:=Vys+dt*ay;
+    X:=X+dt*Vxs;
+    Y:=Y+dt*Vys;
+//    if (r<RE) or (PutPoint(X,Y,ccol)) then
+    PutPoint(X,Y,ccol);
+    if (r<RE) then
+      begin
+        StartClick(Sender);
+        break;
+      end;
+  end;
   Figure.Repaint;
-  //FigurePaint(Sender);
 end;
 
 procedure TMainForm.StartClick(Sender: TObject);
@@ -108,7 +125,6 @@ begin
         Vxs:=StrToFloat(Vx.Text);
         Vys:=StrToFloat(Vy.Text);
         PutPoint(X,Y, ccol);
-        //FigurePaint(Sender);
         Figure.Repaint;
         Start.Caption:='Stop'
     end
@@ -119,25 +135,27 @@ begin
     end;
 end;
 
-procedure TMainForm.PutPoint(pX,pY:Real; col:TColor);
+function TMainForm.PutPoint(pX,pY:Real; col:TColor):Boolean;
 var
   xi,yi:integer;
 begin
   xi:=round(Sx+pX*scale);      // As the coordinate system is inverted
-  yi:=round(Sy-pY*scale);
+  yi:=round(Sye-pY*scale);
+  PutPoint:=bmp.Canvas.Pixels[xi,yi]=ccol; // Trajectory has fully figured out
   bmp.Canvas.Pixels[xi,yi]:=ccol;
-  //bmp.Canvas.Rectangle(xi-2,yi-2,xi+2,yi+2);
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
 var
-  cx,cy:integer;
+  cx,cy, by:integer;
   C:TCanvas;
 begin
   C:=Figure.Canvas;
   Cx:=C.Width >> 1;
   Cy:=C.Height >> 1;
-  C.Draw(Cx-Sx,Cy-Sy,bmp);  //TCanvas
+  by:=Cy-Sye;
+  if by>0 then by:=0;
+  C.Draw(Cx-Sx,by,bmp);  //TCanvas
 end;
 
 end.
