@@ -1,6 +1,5 @@
 *.bak
 planet
+*~
 lib/
-
-
-
+/planet_vala
