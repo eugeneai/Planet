@@ -12,9 +12,10 @@ int sy = 0;
 int cx = 0;
 int cy = 0;
 bool sim = false;
-// var Timer = new GLib.Timer();
 
-const int SIZE = 30;
+DrawingArea figure;
+
+int SIZE = 30;
 
 /* When button click signal received */
 public void on_action_start_activate (Gtk.Action source) {
@@ -126,6 +127,20 @@ public void inf (Context ctx) {
 	ctx.close_path ();
 }
 
+public bool timeout_func() {
+	// stdout.printf("Tick.\n");
+	SIZE+=10;
+	var window = figure.get_window ();
+	if (null == window) {
+		return true;
+	}
+
+	var region = window.get_clip_region ();
+	// redraw the cairo canvas completely by exposing it
+	window.invalidate_region (region, true);
+	window.process_updates (true);
+	return true;
+}
 
 int main (string[] args) {
     Gtk.init (ref args);
@@ -136,7 +151,7 @@ int main (string[] args) {
 		builder.add_from_file ("planet.glade");
 		builder.connect_signals (null);
 		var window = builder.get_object ("main_window") as Window;
-		var figure = builder.get_object ("figure") as DrawingArea;
+		figure = builder.get_object ("figure") as DrawingArea;
 		figure.draw.connect (on_figure_draw);
     /* thats another way to do something when signal received */
 	/*
@@ -150,6 +165,7 @@ int main (string[] args) {
 		stderr.printf ("Ошибка: \"%s\"\n", e.message);
 		return 0;
 	};
+	Timeout.add(2000, timeout_func);
     Gtk.main ();
 
     return 0;
