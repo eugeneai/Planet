@@ -1,5 +1,6 @@
 using Gtk;
 using GLib;
+using Gdk;
 using Cairo;
 
 float x = 0;
@@ -7,6 +8,7 @@ float y = 0;
 float vx = 0;
 float vy = 0;
 float h = 0;
+Gdk.Screen Screen;
 int sx = 0;
 int sy = 0;
 int cx = 0;
@@ -24,7 +26,7 @@ public void on_action_start_activate (Gtk.Action source) {
     stderr.printf ("Clicked! --> \n");
 }
 
-public void on_main_window_destroy (Window source) {
+public void on_main_window_destroy (Gtk.Window source) {
     /* When window close signal received */
 	stderr.printf ("Destroyed\n");
     Gtk.main_quit ();
@@ -128,17 +130,8 @@ public void inf (Context ctx) {
 }
 
 public bool timeout_func() {
-	// stdout.printf("Tick.\n");
 	SIZE+=10;
-	var window = figure.get_window ();
-	if (null == window) {
-		return true;
-	}
-
-	var region = window.get_clip_region ();
-	// redraw the cairo canvas completely by exposing it
-	window.invalidate_region (region, true);
-	window.process_updates (true);
+	figure.queue_draw();
 	return true;
 }
 
@@ -150,7 +143,7 @@ int main (string[] args) {
 	try {
 		builder.add_from_file ("planet.glade");
 		builder.connect_signals (null);
-		var window = builder.get_object ("main_window") as Window;
+		var window = builder.get_object ("main_window") as Gtk.Window;
 		figure = builder.get_object ("figure") as DrawingArea;
 		figure.draw.connect (on_figure_draw);
     /* thats another way to do something when signal received */
@@ -165,6 +158,9 @@ int main (string[] args) {
 		stderr.printf ("Ошибка: \"%s\"\n", e.message);
 		return 0;
 	};
+	Screen=Gdk.Screen.get_default();
+	sx=Screen.get_width() >> 1;
+	sy=Screen.get_height() >> 2;
 	Timeout.add(2000, timeout_func);
     Gtk.main ();
 
