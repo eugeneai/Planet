@@ -6,7 +6,7 @@
     <property name="label" translatable="yes">Quit Application</property>
     <property name="short_label" translatable="yes">Quit</property>
     <property name="tooltip" translatable="yes">Выйти из приложения/</property>
-    <property name="stock_id">gtk-quit</property>
+    <property name="stock_id">gtk-close</property>
     <property name="is_important">True</property>
     <property name="always_show_image">True</property>
     <signal name="activate" handler="on_main_window_destroy" swapped="no"/>
@@ -15,7 +15,7 @@
     <property name="label" translatable="yes">Start Simulation</property>
     <property name="short_label" translatable="yes">Start</property>
     <property name="tooltip" translatable="yes">Начать процесс компьютерного моделирования.</property>
-    <property name="stock_id">gtk-media-play</property>
+    <property name="stock_id">gtk-execute</property>
     <property name="icon_name">media-playback-start</property>
     <property name="is_important">True</property>
     <property name="always_show_image">True</property>
@@ -150,13 +150,12 @@
             </child>
             <child>
               <object class="GtkButton" id="start_button">
-                <property name="label">gtk-media-play</property>
+                <property name="label">gtk-execute</property>
                 <property name="use_action_appearance">True</property>
                 <property name="related_action">action_start</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="action_name">action_start</property>
                 <property name="use_stock">True</property>
               </object>
               <packing>
@@ -166,7 +165,7 @@
             </child>
             <child>
               <object class="GtkButton" id="quit_button">
-                <property name="label">gtk-quit</property>
+                <property name="label">gtk-close</property>
                 <property name="use_action_appearance">True</property>
                 <property name="related_action">action_quit</property>
                 <property name="visible">True</property>
