@@ -68,7 +68,6 @@ begin
   Vy.Text:=FloatToStr(defVy);
   H.Text:=FloatToStr(defH);
   m_s.Caption:='m/s';
-  scale:=Screen.Width/RE/SS;
 
   bmp:=TBitmap.Create;
   bmp.SetSize(Screen.Width, Screen.Height);
@@ -76,10 +75,11 @@ begin
   C.FillRect(0,0,Screen.Width,Screen.Height);
   C.Pen.Color:=RGBToColor(100,190,255);
   C.Brush.Color:=RGBToColor(100,150,255);
-  R:=trunc(RE * scale);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
   Sye:=Sy >> 1;
+  scale:=Sy/RE/SS;
+  R:=trunc(RE * scale);
   C.Ellipse(Sx-R,Sye-R,Sx+R,Sye+R);
   ccol:=clBlack;
 end;
@@ -159,4 +159,3 @@ begin
 end;
 
 end.
-
