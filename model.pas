@@ -14,6 +14,9 @@ const
      defH =400.0; // In km
      RE=6371000;
      SS=13;
+     iters=1000;
+     timescale=100.0;
+     GM=4e14;
 
 type
 
@@ -89,12 +92,28 @@ end;
 procedure TMainForm.TimerTimer(Sender: TObject);
 var
   C:TCanvas;
+  dt,ax,ay,r,r3:Double;
+  i:integer;
 begin
-  X:=X+Vxs;
-  Y:=Y+Vys;
-  PutPoint(X,Y,ccol);
-  Figure.Repaint;
-  //FigurePaint(Sender);
+  dt:=1*timescale/iters;
+  for i:=1 to iters do
+     begin
+       r:=sqrt(sqr(X)+sqr(Y));
+       r3:=r*r*r;
+       ax:=-GM*x/r3;
+       ay:=-GM*y/r3;
+       Vxs:=Vxs+dt*ax;
+       Vys:=Vys+dt*ay;
+       X:=X+dt*Vxs;
+       Y:=Y+dt*Vys;
+       PutPoint(X,Y,ccol);
+       if (r<RE) then
+         begin
+             StartClick(Sender);
+             break;
+         end;
+     end;
+   Figure.Repaint;
 end;
 
 procedure TMainForm.StartClick(Sender: TObject);
@@ -102,15 +121,14 @@ var
   sim:Boolean;
 begin
   Timer.Enabled:=not Timer.Enabled;
-  Sim:=Timer.Enabled;
-  If Sim Then
+  sim:=Timer.Enabled;
+  If sim Then
     begin
         Y:=RE+StrToFloat(H.Text)*1000;
         X:=0.0;
         Vxs:=StrToFloat(Vx.Text);
         Vys:=StrToFloat(Vy.Text);
         PutPoint(X,Y, ccol);
-        //FigurePaint(Sender);
         Figure.Repaint;
         Start.Caption:='Stop'
     end
@@ -133,7 +151,6 @@ begin
   xi:=round(Sx+pX*scale);      // As the coordinate system is inverted
   yi:=round(Sy-pY*scale);
   bmp.Canvas.Pixels[xi,yi]:=ccol;
-  //bmp.Canvas.Rectangle(xi-2,yi-2,xi+2,yi+2);
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
