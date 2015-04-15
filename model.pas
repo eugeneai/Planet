@@ -13,13 +13,14 @@ const
      defVy=0.0;
      defH =400.0; // In km
      RE=6371000;
-     SS=20;
+     SS=13;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    QuitButton: TButton;
     Start: TButton;
     H: TEdit;
     Label3: TLabel;
@@ -31,6 +32,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Timer:TTimer;
+    procedure QuitButtonClick(Sender: TObject);
     procedure StartClick(Sender: TObject);
     procedure FigurePaint(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -67,7 +69,7 @@ begin
   Vy.Text:=FloatToStr(defVy);
   H.Text:=FloatToStr(defH);
   m_s.Caption:='m/s';
-  scale:=Screen.Width/RE/SS;
+  scale:=Screen.Height/(2*RE)/SS;
 
   bmp:=TBitmap.Create;
   bmp.SetSize(Screen.Width, Screen.Height);
@@ -117,6 +119,11 @@ begin
       Start.Caption:='Start';
       ccol:=RGBToColor(Random(256),Random(128),Random(256));
     end;
+end;
+
+procedure TMainForm.QuitButtonClick(Sender: TObject);
+begin
+  Application.Terminate;
 end;
 
 procedure TMainForm.PutPoint(pX,pY:Real; col:TColor);
