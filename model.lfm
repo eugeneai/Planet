@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 543
+  Left = 392
   Height = 582
-  Top = 252
+  Top = 244
   Width = 670
   Caption = 'MainForm'
   ClientHeight = 582
@@ -93,19 +93,53 @@ object MainForm: TMainForm
     TabOrder = 3
   end
   object QuitButton: TButton
-    Left = 232
+    Left = 504
     Height = 25
-    Top = 36
+    Top = 40
     Width = 75
     Caption = 'Quit'
     OnClick = QuitButtonClick
     TabOrder = 4
   end
+  object Label4: TLabel
+    Left = 272
+    Height = 21
+    Top = 8
+    Width = 9
+    Caption = 'T'
+    ParentColor = False
+  end
+  object ET: TEdit
+    Left = 288
+    Height = 33
+    Top = 0
+    Width = 208
+    Enabled = False
+    TabOrder = 5
+    Text = 'ET'
+  end
+  object Label5: TLabel
+    Left = 272
+    Height = 21
+    Top = 40
+    Width = 9
+    Caption = 'V'
+    ParentColor = False
+  end
+  object EV: TEdit
+    Left = 288
+    Height = 33
+    Top = 32
+    Width = 208
+    Enabled = False
+    TabOrder = 6
+    Text = 'EV'
+  end
   object Timer: TTimer
     Enabled = False
     Interval = 10
     OnTimer = TimerTimer
-    left = 432
+    left = 600
     top = 8
   end
 end

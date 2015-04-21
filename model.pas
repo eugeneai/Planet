@@ -17,12 +17,17 @@ const
      iters=1000;
      timescale=100.0;
      GM=4e14;
+     SR=6;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    EV: TEdit;
+    ET: TEdit;
+    Label4: TLabel;
+    Label5: TLabel;
     QuitButton: TButton;
     Start: TButton;
     H: TEdit;
@@ -48,6 +53,7 @@ type
     X,Y:Real;
     Vxs,Vys:Real;
     ccol:TColor;
+    T:double;
     procedure PutPoint(pX,pY:Real; col:TColor);
   public
     { public declarations }
@@ -113,7 +119,10 @@ begin
              break;
          end;
      end;
+   T:=T+dt*i;
    Figure.Repaint;
+   EV.Text:=FloatToStr(sqrt(sqr(Vxs)+sqr(Vys)));
+   ET.Text:=FloatToStr(T/60.0);
 end;
 
 procedure TMainForm.StartClick(Sender: TObject);
@@ -130,7 +139,8 @@ begin
         Vys:=StrToFloat(Vy.Text);
         PutPoint(X,Y, ccol);
         Figure.Repaint;
-        Start.Caption:='Stop'
+        Start.Caption:='Stop';
+        T:=0.0;
     end
   Else
     begin
@@ -157,11 +167,18 @@ procedure TMainForm.FigurePaint(Sender: TObject);
 var
   cx,cy:integer;
   C:TCanvas;
+  xi,yi:integer;
 begin
   C:=Figure.Canvas;
   Cx:=C.Width >> 1;
   Cy:=C.Height >> 1;
   C.Draw(Cx-Sx,Cy-Sy,bmp);  //TCanvas
+  if (abs(X)>1000) and (abs(Y)>1000) then
+    begin
+      xi:=round(Cx+X*scale);      // As the coordinate system is inverted
+      yi:=round(Cy-Y*scale);
+      C.Ellipse(xi-SR,yi-SR,xi+SR,yi+SR);
+    end;
 end;
 
 end.
