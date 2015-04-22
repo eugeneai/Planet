@@ -36,7 +36,6 @@
       <Unit0>
         <Filename Value="planet.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="planet"/>
       </Unit0>
       <Unit1>
         <Filename Value="model.pas"/>
@@ -64,12 +63,6 @@
         </Win32>
       </Options>
     </Linking>
-    <Other>
-      <CompilerMessages>
-        <MsgFileName Value=""/>
-      </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

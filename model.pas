@@ -97,7 +97,6 @@ end;
 
 procedure TMainForm.TimerTimer(Sender: TObject);
 var
-  C:TCanvas;
   dt,ax,ay,r,r3:Double;
   i:integer;
 begin
@@ -160,7 +159,7 @@ var
 begin
   xi:=round(Sx+pX*scale);      // As the coordinate system is inverted
   yi:=round(Sy-pY*scale);
-  bmp.Canvas.Pixels[xi,yi]:=ccol;
+  bmp.Canvas.Pixels[xi,yi]:=col;
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);

@@ -3,14 +3,10 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="8">
       <Unit0>
         <Filename Value="planet.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="planet"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
         <UsageCount Value="34"/>
       </Unit0>
       <Unit1>
@@ -20,116 +16,65 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="model"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="151"/>
-        <CursorPos X="37" Y="175"/>
-        <UsageCount Value="23"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="90"/>
+        <CursorPos X="24" Y="99"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="/usr/lib/fpc/src/packages/palmunits/src/control.pp"/>
-        <UnitName Value="control"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="157"/>
         <CursorPos X="20" Y="186"/>
         <UsageCount Value="9"/>
       </Unit2>
       <Unit3>
         <Filename Value="/usr/lib/lazarus/lcl/include/graphiccontrol.inc"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="43"/>
-        <CursorPos X="1" Y="58"/>
+        <CursorPos Y="58"/>
         <UsageCount Value="9"/>
       </Unit3>
       <Unit4>
         <Filename Value="/usr/lib/lazarus/lcl/include/paintbox.inc"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="26"/>
-        <CursorPos X="1" Y="47"/>
+        <CursorPos Y="47"/>
         <UsageCount Value="9"/>
       </Unit4>
       <Unit5>
         <Filename Value="../DrawTextCanvas/frm1.pas"/>
-        <UnitName Value="frm1"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="76"/>
         <CursorPos X="9" Y="75"/>
         <UsageCount Value="10"/>
       </Unit5>
       <Unit6>
         <Filename Value="/usr/lib/lazarus/lcl/include/control.inc"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="2709"/>
-        <CursorPos X="1" Y="2722"/>
+        <CursorPos Y="2722"/>
         <UsageCount Value="10"/>
       </Unit6>
       <Unit7>
-        <Filename Value="../planet/model.pas"/>
-        <UnitName Value="model"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="89"/>
-        <CursorPos X="28" Y="104"/>
-        <UsageCount Value="10"/>
-      </Unit7>
-      <Unit8>
         <Filename Value="../../codes/Planet/model.pas"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="model"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="110"/>
         <CursorPos X="46" Y="119"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit8>
+      </Unit7>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="0"/>
-    </General>
-    <JumpHistory Count="10" HistoryIndex="9">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="140" Column="21" TopLine="111"/>
+        <Filename Value="model.pas"/>
+        <Caret Line="104" Column="28" TopLine="89"/>
       </Position1>
       <Position2>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="147" Column="21" TopLine="114"/>
+        <Filename Value="model.pas"/>
+        <Caret Line="100" TopLine="85"/>
       </Position2>
-      <Position3>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="126" Column="10" TopLine="112"/>
-      </Position3>
-      <Position4>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="62" Column="17" TopLine="62"/>
-      </Position4>
-      <Position5>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="63" Column="17" TopLine="63"/>
-      </Position5>
-      <Position6>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="64" Column="17" TopLine="64"/>
-      </Position6>
-      <Position7>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="65" Column="17" TopLine="65"/>
-      </Position7>
-      <Position8>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="179" Column="40" TopLine="161"/>
-      </Position8>
-      <Position9>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="20" Column="9" TopLine="10"/>
-      </Position9>
-      <Position10>
-        <Filename Value="../../codes/Planet/model.pas"/>
-        <Caret Line="180" Column="1" TopLine="165"/>
-      </Position10>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
@@ -138,11 +83,10 @@
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
-        <Source Value="../planet/model.pas"/>
+        <Source Value="model.pas"/>
         <InitialEnabled Value="False"/>
-        <Line Value="109"/>
+        <Line Value="108"/>
       </Item1>
     </BreakPoints>
   </Debugging>
-  <EditorMacros Count="0"/>
 </CONFIG>
