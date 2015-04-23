@@ -87,7 +87,7 @@ begin
   C.Brush.Color:=RGBToColor(100,150,255);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
-  Sye:=Sy; // >> 1;
+  Sye:=Sy >> 1;
   scale:=Sy/RE/SS;
   R:=trunc(RE * scale);
   C.Ellipse(Sx-R,Sye-R,Sx+R,Sye+R);
@@ -169,8 +169,8 @@ var
   xi,yi:integer;
 begin
   C:=Figure.Canvas;
-  Cx:=C.Width >> 1;
-  Cy:=C.Height >> 1;
+  Cx:=Figure.ClientWidth >> 1;
+  Cy:=Figure.ClientHeight >> 1;
   by:=Cy-Sye;
   by1:=by;
   if by>0 then by:=0;

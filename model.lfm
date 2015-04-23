@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 558
+  Left = 560
   Height = 582
-  Top = 183
+  Top = 185
   Width = 670
   Caption = 'MainForm'
   ClientHeight = 582
@@ -74,8 +74,8 @@ object MainForm: TMainForm
   end
   object Figure: TPaintBox
     Left = 8
-    Height = 502
-    Top = 72
+    Height = 518
+    Top = 56
     Width = 654
     Anchors = [akTop, akLeft, akRight, akBottom]
     Color = clCream
@@ -85,7 +85,7 @@ object MainForm: TMainForm
   object Start: TButton
     Left = 144
     Height = 25
-    Top = 36
+    Top = 27
     Width = 80
     Caption = 'Start'
     Default = True
@@ -95,7 +95,7 @@ object MainForm: TMainForm
   object QuitButton: TButton
     Left = 504
     Height = 25
-    Top = 40
+    Top = 27
     Width = 75
     Caption = 'Quit'
     OnClick = QuitButtonClick

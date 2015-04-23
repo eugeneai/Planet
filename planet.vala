@@ -82,7 +82,7 @@ int main (string[] args) {
 		builder.connect_signals (null);
 		var window = builder.get_object ("main_window") as Gtk.Window;
 		figure = builder.get_object ("figure") as DrawingArea;
-		window.set_size_request(500,500);
+		window.set_size_request(100,100);
 		figure.draw.connect (on_figure_draw);
 		window.show_all ();
 	} catch (GLib.Error e) {
