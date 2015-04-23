@@ -13,7 +13,7 @@ const
      defVy=0.0;
      defH =400.0; // In km
      RE=6371000.0;
-     SS=13;
+     SS=20;
      iters=1000;
      timescale=100.0;
      GM=4e14;
@@ -87,7 +87,7 @@ begin
   C.Brush.Color:=RGBToColor(100,150,255);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
-  Sye:=Sy >> 1;
+  Sye:=Sy; // >> 1;
   scale:=Sy/RE/SS;
   R:=trunc(RE * scale);
   C.Ellipse(Sx-R,Sye-R,Sx+R,Sye+R);
@@ -164,7 +164,7 @@ end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
 var
-  cx,cy, by:integer;
+  cx,cy, by,by1:integer;
   C:TCanvas;
   xi,yi:integer;
 begin
@@ -172,11 +172,13 @@ begin
   Cx:=C.Width >> 1;
   Cy:=C.Height >> 1;
   by:=Cy-Sye;
+  by1:=by;
   if by>0 then by:=0;
   C.Draw(Cx-Sx,by,bmp);  //TCanvas
   if (abs(X)>1000) and (abs(Y)>1000) then
     begin
       xi:=round(Cx+X*scale);      // As the coordinate system is inverted
+      if by=0 then Cy:=Sye;
       yi:=round(Cy-Y*scale);
       C.Ellipse(xi-SR,yi-SR,xi+SR,yi+SR);
     end;

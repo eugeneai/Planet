@@ -20,7 +20,7 @@ object MainForm: TMainForm
     Left = 8
     Height = 14
     Top = 8
-    Width = 14
+    Width = 13
     Caption = 'Vx'
     ParentColor = False
   end
@@ -28,7 +28,7 @@ object MainForm: TMainForm
     Left = 120
     Height = 14
     Top = 8
-    Width = 15
+    Width = 13
     Caption = 'Vy'
     ParentColor = False
   end
@@ -44,7 +44,7 @@ object MainForm: TMainForm
     Left = 13
     Height = 14
     Top = 36
-    Width = 9
+    Width = 8
     Caption = 'H'
     ParentColor = False
   end
@@ -60,7 +60,7 @@ object MainForm: TMainForm
     Left = 120
     Height = 14
     Top = 40
-    Width = 18
+    Width = 17
     Caption = 'km'
     ParentColor = False
   end
@@ -68,7 +68,7 @@ object MainForm: TMainForm
     Left = 232
     Height = 14
     Top = 8
-    Width = 24
+    Width = 22
     Caption = 'm_s'
     ParentColor = False
   end
@@ -122,7 +122,7 @@ object MainForm: TMainForm
     Left = 272
     Height = 14
     Top = 40
-    Width = 9
+    Width = 8
     Caption = 'V'
     ParentColor = False
   end
