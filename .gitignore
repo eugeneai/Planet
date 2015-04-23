@@ -1,6 +1,7 @@
 *.bak
 planet
+*~
 lib/
-
-
-
+/planet_vala
+/test
+/test2.vala

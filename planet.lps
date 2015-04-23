@@ -8,6 +8,11 @@
         <Filename Value="planet.lpr"/>
         <IsPartOfProject Value="True"/>
         <UsageCount Value="34"/>
+        <UnitName Value="planet"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="32"/>
       </Unit0>
       <Unit1>
         <Filename Value="model.pas"/>

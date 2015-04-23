@@ -12,7 +12,7 @@ const
      defVx=8e3; // 8*10^3 m/s
      defVy=0.0;
      defH =400.0; // In km
-     RE=6371000;
+     RE=6371000.0;
      SS=13;
      iters=1000;
      timescale=100.0;
@@ -49,12 +49,12 @@ type
     { private declarations }
     scale:Real;
     bmp:TBitmap;
-    Sx,Sy:Integer;
+    Sx,Sy,Sye:Integer;
     X,Y:Real;
     Vxs,Vys:Real;
     ccol:TColor;
     T:double;
-    procedure PutPoint(pX,pY:Real; col:TColor);
+    function PutPoint(pX,pY:Real; col:TColor):Boolean;
   public
     { public declarations }
   end;
@@ -71,9 +71,8 @@ implementation
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   C:TCanvas;
-  R, Cx,Cy:Integer;
+  R:Integer;
 begin
-     //Vx.SetTextBuf(FloatToStr(defVx));
   Vx.Text:=FloatToStr(defVx);
   Vy.Text:=FloatToStr(defVy);
   H.Text:=FloatToStr(defH);
@@ -83,15 +82,15 @@ begin
   bmp:=TBitmap.Create;
   bmp.SetSize(Screen.Width, Screen.Height);
   C:=bmp.Canvas;
-  //C.Brush.Color:=clWhite;
   C.FillRect(0,0,Screen.Width,Screen.Height);
-  C.Pen.Color:=clRed;
-  R:=trunc(RE * scale);
-  Cx:=C.Width >> 1;
-  Cy:=C.Height >> 1;
-  C.Ellipse(Cx-R,Cy-R,Cx+R,Cy+R);
+  C.Pen.Color:=RGBToColor(100,190,255);
+  C.Brush.Color:=RGBToColor(100,150,255);
   Sx:=Screen.Width >> 1;
   Sy:=Screen.Height >> 1;
+  Sye:=Sy >> 1;
+  scale:=Sy/RE/SS;
+  R:=trunc(RE * scale);
+  C.Ellipse(Sx-R,Sye-R,Sx+R,Sye+R);
   ccol:=clBlack;
 end;
 
@@ -153,25 +152,28 @@ begin
   Application.Terminate;
 end;
 
-procedure TMainForm.PutPoint(pX,pY:Real; col:TColor);
+function TMainForm.PutPoint(pX,pY:Real; col:TColor):Boolean;
 var
   xi,yi:integer;
 begin
   xi:=round(Sx+pX*scale);      // As the coordinate system is inverted
-  yi:=round(Sy-pY*scale);
+  yi:=round(Sye-pY*scale);
+  PutPoint:=bmp.Canvas.Pixels[xi,yi]=col;
   bmp.Canvas.Pixels[xi,yi]:=col;
 end;
 
 procedure TMainForm.FigurePaint(Sender: TObject);
 var
-  cx,cy:integer;
+  cx,cy, by:integer;
   C:TCanvas;
   xi,yi:integer;
 begin
   C:=Figure.Canvas;
   Cx:=C.Width >> 1;
   Cy:=C.Height >> 1;
-  C.Draw(Cx-Sx,Cy-Sy,bmp);  //TCanvas
+  by:=Cy-Sye;
+  if by>0 then by:=0;
+  C.Draw(Cx-Sx,by,bmp);  //TCanvas
   if (abs(X)>1000) and (abs(Y)>1000) then
     begin
       xi:=round(Cx+X*scale);      // As the coordinate system is inverted
@@ -181,4 +183,3 @@ begin
 end;
 
 end.
-
